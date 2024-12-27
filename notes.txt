@@ -1,0 +1,47 @@
+inputs of project
+
+grace -1)break time sessions to be added
+2)policy updates
+3)designation of users 
+4)apply for resignation 
+5)About us - both 
+6)user profile
+7)user icon in admin
+
+gaurav sir-
+1)if emp takes more than 2 leaves attachment should be added .
+2)admin authority to team lead as well.
+3)gmail notification to hr tl and user
+4)leave req if approved should be vanished from dash but stored in backend
+5)reason and attachment should be displayed in admin board 
+
+Rajiv sir-1)format of date 
+2)dropdown 
+3)break option
+
+Kavita mam- 1)font size 
+2)metadata name of website
+3)heading of attendance system
+4)break system
+5)dropdown
+6)date format
+7)different logos for ujustbe and ujustconnect
+
+Ganesh sir- 
+1)the heading of mark your attendance should be changed when logged in
+
+done changes -
+1)go back button 
+2)form clearance
+3)break time sessions to be added
+4)reason should be displayed in admin board 
+ 5)font size 
+6)metadata name of website
+7)heading of attendance system
+
+
+in progress-
+1)policy updates
+2)dropdown 
+3)format of date
+4)the heading of mark your attendance should be changed when logged in
