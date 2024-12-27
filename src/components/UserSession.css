@@ -1,0 +1,103 @@
+/* Full-screen background with the panel centered */
+.sessions-panel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: auto;
+    background: url('../space.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding: 20px; /* Optional: Add some padding to the sides */
+  }
+  
+  /* Main user sessions panel */
+  .user-session {
+    width: 100%;
+    margin-top: 190px;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Hide overflow from content */
+    height: auto;
+  }
+  
+  /* Header with logo and title */
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    margin-right: 20px;
+    width: 60px;
+    height: auto;
+  }
+  
+  /* Scrollable container for session table */
+  .session-table-container {
+    max-height: auto; /* Adjust this value based on other elements' height */
+   /* overflow-y: auto;  Enable scrolling within the table container */
+  }
+  
+  /* Table styling */
+  .session-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .session-table th, .session-table td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .date-row {
+    background-color: #f0f0f0;
+  }
+  
+  .date-row:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .session-detail {
+    background-color: #f9f9f9;
+  }
+  
+  /* Custom scrollbar styling */
+  .session-table-container::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  .session-table-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .session-table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+  }
+  
+  .session-table .ongoing {
+    background-color:#b2e1e6 ; /* Ongoing sessions highlighted with yellow */
+    color: black; /* Make text readable */
+    font-weight: 600;
+  }
+  
+  .session-table .on-leave {
+    background-color: #e57878; /* On leave sessions highlighted with orange */
+    color: black;
+    font-weight: 600;
+  }
+  
+  .session-table .forgot-to-mark {
+    background-color: #dded9b; /* Forgot to mark attendance highlighted with light red */
+    color: black;
+    font-weight: 600;
+  }
+  
+ 

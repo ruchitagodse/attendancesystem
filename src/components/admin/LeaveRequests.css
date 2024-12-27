@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.leave-requests-container {
+  padding: 35px;
+    background-color: #fff;
+    background-clip: border-box;
+    min-width: 0;
+    word-wrap: break-word;
+    border-radius: 0.4rem;
+}
+
+
+.leave-requests-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.leave-requests-table th, .leave-requests-table td {
+  vertical-align: middle;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+
+}
+
+
+.leave-requests-table tbody tr:nth-child(even) {
+  background-color: #f1f5f7;
+}
+
+
+.leave-requests-table thead th {
+  font-weight: 700;
+  color: #505d69;
+  font-size: 18px;
+  padding: 10px;
+  text-align: start;
+  border: 1px solid #f1f1f1;
+}
+h2 {
+  font-family: 'Forum', sans-serif;
+  font-weight: 700; /* You can change the weight depending on your design */
+  font-size: 24px; /* Adjust font size if needed */
+  color: var(--darkblue) /* Change the text color if required */
+}
+.view-link {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  background-color: (var(--darkblue)); /* Blue background */
+  border-radius: 5px;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+.view-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Blue outline on focus */
+}
+.highlight-yellow {
+  background-color: #f7e8e9;
+}
+
+/* Apply background color to rows and buttons with highlight-yellow */
+.leave-requests-table tbody tr.highlight-yellow {
+  background-color: #f7e8e9 !important;
+}
+
+.leave-requests-table tbody tr.highlight-yellow td {
+  background-color: #f7e8e9 !important;
+}
+
+.leave-requests-table tbody tr td .highlight-button {
+  background-color: #f7e8e9 !important;
+  color: #f16f06 !important;
+  border: 1px solid #f16f06;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+  .leave-requests-container{
+    width: 160%;
+  }
+}

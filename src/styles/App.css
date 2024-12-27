@@ -1,0 +1,13 @@
+<div className="container">
+{!user ? (
+  <button className="button" onClick={handleLogin}>Sign in with Microsoft</button>
+) : (
+  <div className="loggedInContainer">
+    <button className="button" onClick={handleLogout}>Logout</button>
+    <p className="greeting">Welcome, {user.displayName || 'Guest'}!</p>
+    <p className="time">Current Time: {currentTime}</p>
+  </div>
+)}
+</div>
+);
+};

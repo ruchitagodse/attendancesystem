@@ -1,0 +1,64 @@
+// layout page
+.logoContainer {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    &.expand {
+      // width: 300px;
+  
+      .logo {
+        width: 300px;
+  
+        img {
+          width: 65px;
+        }
+      }
+    }
+    .logo {
+      width: 65px;
+      position: relative;
+  
+      img {
+        width: 65px;
+      }
+    }
+  
+    .ham-menu-btn {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 150px;
+      cursor: pointer;
+  
+      span {
+        background-color: $navbarcolor;
+        display: block;
+        width: 25px;
+        height: 3px;
+        position: relative;
+        margin-bottom: 5px;
+  
+        &:nth-child(2) {
+          width: 15px;
+        }
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+
+  //  main container
+
+.maincontainer {
+    width: calc(100% - 70px);
+    padding: 25px;
+    margin-left: 70px;
+    margin-top: 70px;
+    &.expand {
+      width: calc(100% - 300px);
+      margin-left: 300px;
+    }
+  }

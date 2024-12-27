@@ -1,0 +1,167 @@
+.sessions-table-container {
+  padding: 35px;
+    background-color: #fff;
+    background-clip: border-box;
+    min-width: 0;
+    word-wrap: break-word;
+    border-radius: 0.4rem;
+}
+
+
+.sessions-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.sessions-table th, .sessions-table td {
+  vertical-align: middle;
+  padding: 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+
+.sessions-table tbody tr:nth-child(even) {
+  background-color: #f1f5f7;
+}
+
+
+.sessions-table thead th {
+  font-weight: 700;
+  color: #505d69;
+  font-size: 18px;
+  padding: 10px;
+  text-align: start;
+  border: 1px solid #f1f1f1;
+}
+
+.no-user-data {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.user-link {
+  color: black;
+  text-decoration: none;
+  
+}
+
+.user-link:hover {
+  text-decoration:none;
+}
+
+
+
+.date-row {
+  background-color: #f0f0f0;
+}
+
+.date-row:hover {
+  background-color: #e0e0e0;
+}
+
+.session-detail {
+  background-color: #f9f9f9;
+}
+
+/* Custom scrollbar styling */
+.sessions-table-container::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.sessions-table-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.sessions-table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color on hover */
+}
+.back-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 80px;
+  height: 30px;
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  border-radius: 30px;
+  border: 1px solid #8F9092;
+  transition: all 0.2s ease;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
+}
+
+.back-buttons:hover {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+.back-buttons:active {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+.back-buttons:focus {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+.search {
+  width: 100%;
+  position: relative;
+  display: flex; 
+}
+
+.searchTerm {
+  width: 100%;
+  border: 2px solid #e2e2e2;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 20px 0 0 20px; /* Increased the border-radius for a curvy effect */
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus {
+  color: black;
+}
+
+.searchButton {
+  width: 30px;
+  height: 32px;
+  border: 1px solid #e2e2e2;
+  background: #e2e2e2;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 20px 20px 0; /* Increased the border-radius for a curvy effect */
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+@media (max-width: 480px) {
+  .header h2{
+     font-size: 13px;
+  }
+
+  .user-sessions{
+  height: 500px;
+  overflow-y: auto; /* Enable scrolling within the table container */
+  margin-top: 20px; 
+  
+}
+@media (max-width: 767px) {
+  .sessions-table-container {
+      padding: 2px;
+  }
+}
+
+}
+
+h2{
+  font-family: Forum, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}

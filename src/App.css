@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* src/App.css */
+
+
+
+h1 {
+  text-align: center;
+  color: #333;
+  padding: 20px;
+}
+
+/* src/App.css */
+
+body {
+  /* font-family: Poppins, sans-serif; */
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  font-family: 'Mukta', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(81, 75, 75);
+  padding: 20px;
+}
+
+.logoN {
+  line-height: 0px;
+}
+
+/* button:hover {
+  background-color: #0056b3;
+} */
+
+/* Button CSS*/
+.m-button {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  /* font-size: 15px; */
+  /* font-family: inherit; */
+  border: none;
+  position: relative;
+  overflow: hidden;
+  color: #FFF;
+  z-index: 1;
+  background-color: #f16f06;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .5s ease;
+  text-decoration: none;
+}
+
+.m-button::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #a2cbda 0%, #819eb0 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.m-button:hover::before {
+  width: 100%;
+}
+
+.m-button:hover {
+  color: #16274f;
+}
+
+.m-button-2 {
+  width: auto;
+  height: 2.2em;
+  border-radius: 30em;
+  /* font-size: 15px; */
+  /* font-family: inherit; */
+  padding: 0 30px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  color: #a2cbda;
+  z-index: 1;
+  border: 1px solid #a2cbda;
+  background-color: transparent;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  transition: .5s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.m-button-2::before {
+  content: '';
+  width: 0;
+  height: 2.2em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #a2cbda 0%, #819eb0 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.m-button-2:hover {
+  color: #16274f;
+}
+
+.m-button-2:hover::before {
+  width: 100%;
+}
+
+.notification-icon {
+  font-size: 22px;
+  color: #a2cbda;
+  cursor: pointer;
+}
+
+.m-button-3 {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  /* font-size: 15px; */
+  /* font-family: inherit; */
+  border: none;
+  position: relative;
+  overflow: hidden;
+  color: #FFF;
+  z-index: 1;
+  background-color: #f16f06;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .5s ease;
+  text-decoration: none;
+}
+
+.m-button-3::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #16274f 0%, #819eb0 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.m-button-3:hover::before {
+  width: 100%;
+}
+
+.m-button-3:hover {
+  /* width:100%; */
+  color: #FFF;
+}
+
+.m-button-4 {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  /* font-size: 15px; */
+  /* font-family: inherit; */
+  padding: 0 30px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  color: #16274f;
+  z-index: 1;
+  border: 1px solid #16274f;
+  background-color: transparent;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  transition: .5s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.m-button-4::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #a2cbda 0%, #16274f 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.m-button-4:hover::before {
+  width: 100%;
+}
+
+.m-button-4:hover {
+  /* width:100%; */
+  color: #FFF;
+}
+
+.m-button-6 {
+  width: 50px;
+  height: 2.2em;
+  border-radius: 30em;
+  /* font-size: 15px; */
+  /* font-family: inherit; */
+  padding: 0 30px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  color: var(--orange);
+  z-index: 0;
+  border: 1px solid var(--orange);
+  background-color: transparent;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  transition: .5s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.m-button-6:hover {
+  background-color: #e2e2e2; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+/* .m-button-6::before {
+  content: '';
+  width: 0;
+  height: 2.2em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #a2cbda 0%, #819eb0 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.m-button-6:hover {
+  color: #16274f;
+}
+
+.m-button-6:hover::before {
+  width: 100%;
+} */
+
+.m-button-2 {
+  width: auto;
+  height: 2.2em;
+  border-radius: 30em;
+  /* font-size: 15px; */
+  /* font-family: inherit; */
+  padding: 0 30px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  color: #a2cbda;
+  z-index: 1;
+  border: 1px solid #a2cbda;
+  background-color: transparent;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  transition: .5s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.m-button-2::before {
+  content: '';
+  width: 0;
+  height: 2.2em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #a2cbda 0%, #819eb0 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.m-button-2:hover {
+  color: #16274f;
+}
+
+.m-button-2:hover::before {
+  width: 100%;
+}
+h2{
+  font-family: Forum, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}

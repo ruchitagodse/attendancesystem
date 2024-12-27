@@ -1,0 +1,680 @@
+:root {
+  --orange: #f16f06;
+  --blue: #a2cbda;
+  --darkblue : #16274f;
+  --brown : #323232;
+  --white : #e2e2e2;
+}
+.mainContainer {
+  /* font-family: 'Arial', sans-serif; */
+  color: #ffffff;
+  background: url('../space.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+
+.footerMain{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  align-items: center;
+  height: 1vh;
+}
+
+
+/* Navigation Container */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: transparent;
+}
+
+.background-tabs {
+  display: flex;
+  gap: 20px;
+}
+
+/* Navigation Tab Link */
+.background-tab-link {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    0% var(--curve-size),
+    var(--curve-size) 0,
+    100% 0,
+    100% calc(100% - var(--curve-size)),
+    calc(100% - var(--curve-size)) 100%,
+    0 100%
+  );
+  transition: color 250ms;
+}
+
+.background-tab-link::after,
+.background-tab-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.background-tab-link::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+  50% {
+    background-position: 70% 100%;
+  }
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+.background-tab-link::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    var(--border-width)
+      calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.background-tab-link:where(:hover, :focus)::after {
+  clip-path: polygon(
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.background-tab-link:where(:hover, :focus) {
+  color: #fff;
+}
+
+
+/* Login Main Section */
+.loginMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 50px;
+  flex-grow: 1;
+  padding-top: 140px;
+}
+
+/* Left Section */
+.loginLeft {
+  margin-bottom: 20px;
+}
+
+.loginLeft h1 {
+  background: linear-gradient(90deg, var(--orange), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3em;
+  font-weight: 700;
+  font-family: 'Forum', sans-serif;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+  padding: 0px;
+  text-align: left;
+  
+}
+
+.loginLeft p {
+  font-size: 1.4em;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 100;
+  margin: 0 0 20px 0; 
+}
+
+.signup-button {
+  background: linear-gradient(145deg, #5d88ce, #a2cbda);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.signup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3), -4px -4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Right Section */
+.LoginRight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.loginBox {
+  background-color: white; 
+  padding:30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 20px 0; /* Margin for spacing */
+  max-width: 300px;  
+  height: 300px; /* Allow height to adjust based on content */
+  text-align: center;
+  border-radius: 15px;
+  align-items: center;
+    display: flex;
+}
+
+.loggedInContainer{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginBox h1 {
+  color:#16274f;
+  margin-bottom: 30px;
+  padding: 0px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Forum' ,sans-serif;
+}
+
+.greeting {
+  color: #16274f;
+  font-size: 26px;
+  font-weight: 900;
+  font-family: 'Forum', sans-serif;
+  margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-bottom: 30px;
+    
+  
+}
+.time {
+  color: #000;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.5;
+  font-family: 'Mukta', sans-serif;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+/* Buttons */
+
+.loginBox .m-button{margin-top: 30px;}
+.btn {
+  background-color: white;
+  color: #333;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none; 
+  box-shadow: none;
+}
+
+.btn img {
+  width: 100%;
+  max-width: 250px; 
+
+  /* padding: 40px; */
+}
+
+.btn:hover {
+  background-color: #eaeaea;
+}
+
+
+.copy{
+  margin: 0 15px;
+  font-size: 0.9em;
+  color: #a2cbda;
+  padding-bottom: 20px;
+}
+
+
+
+
+/* From Uiverse.io by javierBarroso */ 
+
+.social-login-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  -webkit-box-reflect: below 5px linear-gradient(transparent, #00000055);
+}
+.social-login-icons svg {
+  width: 40px;
+}
+
+
+.social-icon-1,
+.social-icon-1-1,
+.social-icon-2,
+.social-icon-2-2,
+.social-icon-3,
+.social-icon-3-3,
+.social-icon-4,
+.social-icon-4-4 {
+  width: 43px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  margin: 30px 0 0px 0;
+  
+}
+
+.icon svg {
+  fill: #a2cbda;
+  transition: opacity 0.5s ease;
+}
+
+.socialcontainer {
+  height: 80px;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+.social-icon-1 {
+  transition-duration: 0.4s;
+  background-color: red;
+  transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+}
+.social-icon-1 svg,
+.social-icon-2 svg,
+.social-icon-3 svg,
+.social-icon-4 svg {
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
+}
+.social-icon-1-1 {
+  transition-duration: 0.4s;
+  background-color: rgb(0, 0, 0, 0);
+}
+.socialcontainer:hover .social-icon-1 {
+  transform: translateY(-68px);
+}
+.socialcontainer:hover .social-icon-1 svg,
+.socialcontainer:hover .social-icon-2 svg,
+.socialcontainer:hover .social-icon-3 svg,
+.socialcontainer:hover .social-icon-4 svg {
+  opacity: 1;
+}
+.social-icon-2 {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+  background: linear-gradient(
+    72.44deg,
+    #ff7a00 11.92%,
+    #ff0169 51.56%,
+    #d300c5 85.69%
+  );
+}
+.socialcontainer:hover .social-icon-2 {
+  transform: translateY(-70px);
+}
+.social-icon-3 {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+  background: #316ff6;
+}
+
+.socialcontainer:hover .social-icon-3 {
+  transform: translateY(-70px);
+}
+.social-icon-4 {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+
+  background: linear-gradient(
+    180deg,
+    rgba(129, 34, 144, 1) 0%,
+    rgba(77, 34, 124, 1) 91%
+  );
+}
+
+.socialcontainer:hover .social-icon-4 {
+  transform: translateY(-70px);
+}
+
+
+/* From Uiverse.io by cssbuttons-io */ 
+.bton {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #e37216;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.bton:hover {
+  background-color: #f16f06;
+  box-shadow: 0px 15px 20px rgba(204, 126, 48, 0.932);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.bton:active {
+  transform: translateY(-1px);
+}
+/* Main container adjustments */
+@media (max-width: 767px) {
+  /* Main Container */
+  .mainContainer {
+    width: 100%;
+    display: flex;
+    padding: 0 2px; /* Reduced padding for more compact layout */
+    text-align: center; /* Center-align all content */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  /* Header Section */
+  .loginLeft h1 {
+    font-size: 1.3rem; /* Smaller font size to fit on one line */
+    color: #ff8c42; /* Accent color */
+    max-width: 90%; /* Ensure the text uses more space */
+    white-space: normal; /* Allow text wrapping */
+    text-align: center;
+  }
+
+  .loginLeft p {
+    font-size: 1.1rem; /* Consistent font size */
+    margin: 10px auto; /* Adjusted margin */
+    max-width: 90%; /* Ensure the text uses more space */
+    text-align: center; /* Center the paragraph */
+  }
+
+  /* Logo adjustments */
+  .logoN img {
+    max-width: 60px; /* Smaller logo size for smaller screens */
+    height: auto;
+    margin-bottom: 5px; /* Adds space between the logo and navigation */
+  }
+  .background-tabs {
+    display: flex;
+    gap: 8px;
+  }
+  .greeting{
+    padding: 2px;
+  }
+
+  /* Text adjustments */
+  .loginMain {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 5px; /* Smaller gap for better use of space */
+  }
+
+  .signup-button {
+    font-size: 1rem; /* Consistent button font size */
+    padding: 10px 20px;
+    width: auto;
+    margin: 0 auto; /* Center button */
+  }
+
+  /* Login Box adjustments */
+  .loginBox {
+    width: 120%; /* Full width on smaller screens */
+    margin: 0; /* Center login box */
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .loginBox input {
+    width: 100%;
+    padding: 10px;
+  }
+ /* Footer adjustments */
+ .footerMain {
+  text-align: center;
+  padding: 20px 10px; /* Increased padding for better spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.copy {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Social Icons adjustments */
+.social-login-icons {
+  justify-content: center;
+  gap: 10px; /* Adjust gap */
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.socialcontainer {
+  width: 8px; /* Adjusted icon size */
+  height: 8px; /* Maintain aspect ratio */
+}
+
+.socialcontainer svg {
+  width: 100%;
+  height: 100%;
+}
+  .background-tab-link{
+    padding: 0.3em 1.3em;
+    font-size: 12px;
+  }
+
+
+}
+
+/* Media Query for Extra Small Devices */
+@media (max-width: 480px) {
+  .headerMain {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Add gap between logo and nav */
+  }
+
+  /* Adjusting text and buttons */
+  .loginMain {
+    gap: 10px; /* Reduced gap for compact layout */
+    align-items: center; /* Center elements */
+  }
+
+  .loginLeft h1 {
+    font-size: 1.2rem; /* Smaller font size */
+    margin: 10px auto; /* Center and use more space */
+    max-width: 90%; /* Ensure the text uses more space */
+    white-space: normal; /* Allow text wrapping */
+    text-align: center;
+    top: -25px;
+  }
+
+  .loginLeft p {
+    font-size: 0.9rem; /* Smaller font size */
+    margin: 10px auto; /* Center and use more space */
+    max-width: 90%; /* Ensure the text uses more space */
+    text-align: center;
+  }
+
+  .signup-button {
+    font-size: 0.9rem; /* Smaller button font size */
+    padding: 8px 16px;
+  }
+
+  
+
+  /* Social Icons adjustments */
+  .social-login-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .socialcontainer {
+    width: 28px; /* Smaller icon size */
+  }
+
+  /* Footer adjustments */
+  .footerMain {
+    padding: 15px 0; /* Compact footer padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px; /* Adds space between copyright and social icons */
+  }
+}
+
+/* General Layout */
+.break-system {
+/* background-color: #f4f6f9; */
+ font-family: Arial, sans-serif;
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px 15px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    margin-bottom: -15px;
+    transition: all 0.3s ease;
+}
+
+/* Header Style */
+.break-system h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Break Status Text */
+.break-system p {
+  font-size: 1.1rem;
+  color: #34495e;
+  margin: 10px 0;
+}
+
+/* Elapsed Time Style (Only when on Break) */
+.break-system .elapsed-time {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e67e22;
+  margin-top: 10px;
+}
+
+/* Button Styling */
+.break-system button {
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-weight: 100;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 60%;
+}
+
+.break-system button:hover {
+  transform: scale(1.05);
+}
+
+.break-system button:focus {
+  outline: none;
+}
+
+.break-system button.start-break {
+  background-color: var(--blue);
+  color: black;
+}
+
+.break-system button.end-break {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .break-system {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .break-system h2 {
+    font-size: 1.3rem;
+  }
+
+  .break-system p, .break-system .elapsed-time {
+    font-size: 1rem;
+  }
+
+  .break-system button {
+    font-size: 0.9rem;
+  }
+}
