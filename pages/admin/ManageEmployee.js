@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { db } from "../../firebaseConfig";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
-import EditEmployee from "./EditEmployee";
+import EditEmployee from "../../component/EditEmployee";
 import "../../src/app/styles/addUser.scss";
 import "../../src/app/styles/main.scss";
 
