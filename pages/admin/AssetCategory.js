@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import Header from "../../component/Header";
 import Navbar from "../../component/Navbar";
+import "../../src/app/styles/main.scss";
 
 const AssetCategories = () => {
   const [categories, setCategories] = useState([]);
