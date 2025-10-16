@@ -4,6 +4,7 @@ import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import Header from "../../component/Header";
 import Navbar from "../../component/Navbar";
 import "../../src/app/styles/main.scss";
+import "../../src/app/styles/addUser.scss";
 
 const AssetLogs = ({ selectedAssetId }) => {
   const [assets, setAssets] = useState([]);
@@ -98,3 +99,4 @@ const AssetLogs = ({ selectedAssetId }) => {
 };
 
 export default AssetLogs;
+
