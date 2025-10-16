@@ -11,6 +11,7 @@ import {
 import Header from "../../component/Header";
 import Navbar from "../../component/Navbar";
 import "../../src/app/styles/main.scss";
+import "../../src/app/styles/addUser.scss";
 
 const AssetCategories = () => {
   const [categories, setCategories] = useState([]);
