@@ -1,0 +1,34 @@
+.headerMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 99;
+    background: rgba(22, 39, 79, 0);
+    transition: all 0.5s ease;
+  }
+  .headerMain.scrolled{background: rgba(22, 39, 79, 1); padding: 5px 50px; transition: all 0.5s ease;}
+
+  .HeaderRight{
+    display: flex;
+    /* flex-direction: column ; */
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  .logoN img {
+    width: 80px;
+    height: auto;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+
+  .headerMain.scrolled .logoN img{width: 60px;}
+  
+.hide{
+    background-color: transparent;
+    border: none;
+}

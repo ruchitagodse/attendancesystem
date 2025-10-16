@@ -1,0 +1,517 @@
+.add-user-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f3f3f4; // grey background
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #16274f; // blue
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  .tab-btn {
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #f3f3f4;
+    cursor: pointer;
+    font-weight: 500;
+
+    &.active {
+      background: #16274f;
+      color: white;
+    }
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #505d69; // body text
+
+    input, select {
+      margin-top: 0.4rem;
+      padding: 0.6rem;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: #16274f;
+        outline: none;
+      }
+    }
+
+    .error {
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+      color: #fe6f06; // red-orange for errors
+    }
+  }
+}
+
+.submit-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  font-size: 1rem;
+  background: #16274f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #0b1f44; // darker blue
+  }
+
+  &:disabled {
+    background: #999;
+    cursor: not-allowed;
+  }
+}
+
+.manage-employees {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f3f4;
+  min-height: 100vh;
+
+  h1 {
+    margin-bottom: 20px;
+    color: #343a40; // heading
+    text-align: center;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    max-width: 350px;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    &:focus {
+      border-color: #16274f;
+    }
+  }
+
+
+  button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:first-of-type {
+      background-color: #0bb197; // edit green
+      color: white;
+    }
+
+    &:last-of-type {
+      background-color: #fe6f06; // delete orange
+      color: white;
+    }
+  }
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.leave-requests-container {
+  padding: 35px;
+    background-color: #fff;
+    background-clip: border-box;
+    min-width: 0;
+    word-wrap: break-word;
+    border-radius: 0.4rem;
+}
+
+
+.leave-requests-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.leave-requests-table th, .leave-requests-table td {
+  vertical-align: middle;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+
+}
+
+
+.leave-requests-table tbody tr:nth-child(even) {
+  background-color: #f1f5f7;
+}
+
+
+.leave-requests-table thead th {
+  font-weight: 700;
+  color: #505d69;
+  font-size: 18px;
+  padding: 10px;
+  text-align: start;
+  border: 1px solid #f1f1f1;
+}
+h2 {
+  font-family: 'Forum', sans-serif;
+  font-weight: 700; /* You can change the weight depending on your design */
+  font-size: 24px; /* Adjust font size if needed */
+  color: var(--darkblue) /* Change the text color if required */
+}
+.view-link {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  background-color: (var(--darkblue)); /* Blue background */
+  border-radius: 5px;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+.view-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Blue outline on focus */
+}
+.highlight-yellow {
+  background-color: #f7e8e9;
+}
+
+/* Apply background color to rows and buttons with highlight-yellow */
+.leave-requests-table tbody tr.highlight-yellow {
+  background-color: #f7e8e9 !important;
+}
+
+.leave-requests-table tbody tr.highlight-yellow td {
+  background-color: #f7e8e9 !important;
+}
+
+.leave-requests-table tbody tr td .highlight-button {
+  background-color: #f7e8e9 !important;
+  color: #f16f06 !important;
+  border: 1px solid #f16f06;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+  .leave-requests-container{
+    width: 160%;
+  }
+}
+.add-user-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f3f3f4; /* grey background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  h1 {
+    margin-bottom: 1.5rem;
+    color: #16274f; /* blue */
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  .tab-btn {
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #f3f3f4;
+    cursor: pointer;
+    font-weight: 500;
+
+    &.active {
+      background: #16274f;
+      color: white;
+    }
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #505d69; /* body text */
+
+    input, select, textarea {
+      margin-top: 0.4rem;
+      padding: 0.6rem;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: #16274f;
+        outline: none;
+      }
+    }
+
+    .error {
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+      color: #fe6f06; /* red-orange for errors */
+    }
+  }
+}
+
+.submit-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  font-size: 1rem;
+  background: #16274f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #0b1f44; /* darker blue */
+  }
+
+  &:disabled {
+    background: #999;
+    cursor: not-allowed;
+  }
+}
+
+/* ------------------ Table Styles ------------------ */
+.users-table-container {
+  margin-top: 2rem;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.users-table th, .users-table td {
+  padding: 10px;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: left;
+}
+
+.users-table th {
+  background: #16274f;
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+
+.users-table tr:hover {
+  background: #f1f5f7;
+}
+
+/* ------------------ Buttons ------------------ */
+button {
+  border: none;
+  padding: 6px 12px;
+  margin: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.add-btn {
+  background: #0bb197;
+  color: #fff;
+}
+
+.edit-btn {
+  background: #fcb92c;
+  color: #fff;
+}
+
+.delete-btn {
+  background: #f13333;
+  color: #fff;
+}
+
+.assign-btn {
+  background: #16274f;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.search-btn {
+  background: #0bb197;
+  color: #fff;
+  margin-left: 5px;
+}
+
+/* ------------------ QR Code ------------------ */
+.qr-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+/* ------------------ Employee Assign Table ------------------ */
+.assign-container {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 767px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .users-table {
+    font-size: 12px;
+  }
+  .qr-img {
+    width: 40px;
+    height: 40px;
+  }
+}
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f3f3f4; /* light grey background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  color: #16274f; /* blue heading */
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-container input[type="text"],
+.form-container select,
+.form-container textarea,
+.form-container input[type="file"] {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-container input[type="text"]:focus,
+.form-container select:focus,
+.form-container textarea:focus,
+.form-container input[type="file"]:focus {
+  border-color: #16274f;
+  box-shadow: 0 0 0 3px rgba(22, 39, 79, 0.2);
+}
+
+.form-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-container .add-btn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #0bb197; /* green button */
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.form-container .add-btn:hover {
+  background: #08977f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .form-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-container input[type="text"],
+  .form-container select,
+  .form-container textarea,
+  .form-container input[type="file"] {
+    font-size: 0.95rem;
+  }
+
+  .form-container .add-btn {
+    font-size: 0.95rem;
+  }
+}

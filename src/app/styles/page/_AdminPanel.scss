@@ -1,0 +1,354 @@
+/* .maincontainer {
+  width: calc(100% - 70px);
+    padding: 25px;
+    margin-left: 70px;
+    margin-top: 70px;
+    box-sizing: border-box;
+}
+
+.maincontainer.expand {
+  width: calc(100% - 200px);
+  margin-left: 300px;
+} */
+
+
+
+.logoContainer {
+  display: flex;
+  position: fixed;
+  top: -5px;
+  left: -1px;
+  z-index: 2;
+  align-items: center;
+}
+
+.logos { 
+  width: 60px;
+  height: auto;
+  padding: 5px;
+}
+    
+    /* .ham-menu-btn {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 150px;
+      cursor: pointer;
+  
+      span {
+        background-color: #636e75;
+        display: block;
+        width: 25px;
+        height: 3px;
+        position: relative;
+        margin-bottom: 5px;
+  
+        &:nth-child(2) {
+          width: 15px;
+        }
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+   */
+
+    
+    /* .m-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.20rem 1.40rem;
+      position: fixed;
+      left: 0px;
+      background-color: white;
+      box-shadow: 0px 0px 15px rgba(161, 158, 158, 0.911);
+      width: 97%;
+      top: 0px;
+      overflow: auto;
+      z-index: 1;
+  }
+  
+  .headerRight {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      justify-content: space-between;
+  }
+  
+  .headerRight > div {
+      position: relative;
+      padding: 20px 15px;
+      align-items: center;
+      display: flex;
+      margin-left: 20px;
+      font-size: 14px;
+  }
+  
+  .headerRight button {
+      background: transparent;
+      border: none;
+      display: flex;
+    border-radius: 20px;
+      font-size: 18px;
+      align-items: center;
+      width: 120px;
+      cursor: pointer;
+      font-family: 'Arial', sans-serif;
+      transition: background-color 0.3s ease;
+  }
+ 
+.headerRight button:hover {
+  background-color:var(--blue);
+}
+
+  .headerRight button .icon-rotate-90 {
+      transform: rotate(90deg);
+      font-size: 24px;
+      margin-right: 5px;
+  }
+
+  .headerRight button .icons{
+  font-size: 26px;
+    padding-top: 2px;
+    margin-right: 5px;
+  }
+  .headerLeft {
+      display: flex;
+      background-color: #343a40;
+  } */
+  /* .m-navbar {
+    background-color: #fff;
+    padding-top: 295px;
+    width: 70px;
+    height: 100vh;
+    box-shadow: 0px 0px 15px rgba(161, 158, 158, 0.911);
+    box-sizing: border-box;
+    position: fixed;
+    left: 0px;
+    top: 72px;
+    z-index: 50;
+}
+
+.m-navbar.unexpand > ul > li:hover::before {
+    width: 300px;
+    height: 53px;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #10345e;
+}
+
+.m-navbar.unexpand > ul > li:hover .linklabel {
+    display: block;
+    padding-left: 55px;
+    color: #fff;
+}
+
+.m-navbar.unexpand > ul > li:hover .icons {
+    color: #fff;
+}
+
+.m-navbar.unexpand > ul > li:hover > ul {
+    display: block;
+    background-color: #fff;
+    width: 230px;
+    position: absolute;
+    padding-left: 15px;
+    margin-top: 0px;
+    left: 70px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.m-navbar > ul {
+    padding: 0;
+}
+
+.m-navbar > ul > li {
+    position: relative;
+    list-style-type: none;
+    top: -250px;
+}
+
+.m-navbar > ul > li > ul {
+    padding-left: 50px;
+    color: #6c757d; 
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    display: none;
+}
+
+.m-navbar > ul > li > ul li {
+    padding: 8px 10px;
+}
+
+.m-navbar a {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.m-navbar a:hover {
+    width: 30px;
+    cursor: pointer;
+}
+
+.m-navbar .submenuIcon {
+    color: #6c757d;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    display: none;
+}
+
+.m-navbar .icons {
+    color: #74788d;
+    font-size: 20px;
+}
+
+.m-navbar .linklabel {
+    color: #1f4f78; 
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    display: none;
+    letter-spacing: 1px;
+} */
+.space {
+  margin-left: 10px; /* Add space between "Leave" and "Requests" */
+}
+/* 
+.m-navbar.expand {
+    width: 300px;
+}
+
+.m-navbar.expand li .submenuIcon {
+    display: block;
+}
+
+.m-navbar.expand .linklabel {
+    display: flex;
+} */
+.m-button-5 {
+  width: 6em;
+  height: 2em;
+  border-radius: 30em;
+  /* font-size: 15px; */
+  /* font-family: inherit; */
+  padding: 0 30px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  color: #16274f;
+  z-index: 0;
+  border: 1px solid #16274f;
+  background-color: transparent;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  transition: .5s ease;
+  cursor: pointer;
+  text-decoration: none;
+  float: right;
+  top: -58px;
+}
+
+.m-button-5::before {
+  content: '';
+  width: 0;
+  height: 2em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #a2cbda 0%, #16274f 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.m-button-5:hover::before {
+  width: 100%;
+}
+
+.m-button-5:hover {
+  /* width:100%; */
+  color: #FFF;
+}
+
+.users-table-container {
+  padding: 35px;
+    background-color: #fff;
+    background-clip: border-box;
+    min-width: 0;
+    word-wrap: break-word;
+    border-radius: 0.4rem;
+}
+
+
+.users-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.users-table th, .users-table td {
+  vertical-align: middle;
+  padding: 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+
+.users-table tbody tr:nth-child(even) {
+  background-color: #f1f5f7;
+}
+
+
+.users-table thead th {
+  font-weight: 700;
+  color: #505d69;
+  font-size: 18px;
+  padding: 10px;
+  text-align: start;
+  border: 1px solid #f1f1f1;
+}
+
+.no-user-data {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.user-link {
+  color: black;
+  text-decoration: none;
+  
+}
+
+.user-link:hover {
+  text-decoration:none;
+}
+
+@media (max-width: 767px) {
+
+.m-header{
+  width: 91%;
+} 
+
+
+.sessions-table-container {
+  padding: 35px 20px 10px 90px;
+}
+
+/* .m-navbar{
+  height: 140vh;
+} */
+}

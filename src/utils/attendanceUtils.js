@@ -1,5 +1,6 @@
+// utils/attendanceReport.js
 import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { db } from "../../firebaseConfig";
 
 export const generateAttendanceReport = async (date) => {
   try {
@@ -8,40 +9,53 @@ export const generateAttendanceReport = async (date) => {
     const notMarkedUsers = [];
     const onHolidayUsers = [];
 
-    // Fetch all employees
-    const usersCollection = collection(db, "employee");
+    // Fetch all employees from employeeDetails
+    const usersCollection = collection(db, "employeeDetails");
     const usersSnapshot = await getDocs(usersCollection);
+
     const allUsers = usersSnapshot.docs
-      .map((userDoc) => ({
-        id: userDoc.id,
-        name: userDoc.data().displayName || "Unknown User",
-        department: userDoc.data().department || "Unknown",
-      }))
+      .map((userDoc) => {
+        const data = userDoc.data();
+        const personalInfo = data.personalInfo || {};
+
+        return {
+          id: userDoc.id, // phone number as docId
+          name: personalInfo.name || "Unknown User",
+          department: personalInfo.department || "Unknown",
+          status: personalInfo.status || "active",
+        };
+      })
       // Exclude "Resigned" and "Terminated" users
-      .filter((user) => user.department !== "Resigned" && user.department !== "Terminated");
+      .filter(
+        (user) =>
+          user.status.toLowerCase() !== "resigned" &&
+          user.status.toLowerCase() !== "terminated"
+      );
 
     // Fetch holidays for the given date
     const holidaysCollection = collection(db, "holidays");
     const holidaysQuery = query(holidaysCollection, where("date", "==", date));
     const holidaysSnapshot = await getDocs(holidaysQuery);
-    const holidays = holidaysSnapshot.docs.map((holidayDoc) => holidayDoc.data());
+    const holidays = holidaysSnapshot.docs.map((doc) => doc.data());
 
     const departmentsOnHoliday = new Set();
     holidays.forEach((holiday) => {
-      holiday.departments.forEach((dept) => departmentsOnHoliday.add(dept));
+      (holiday.departments || []).forEach((dept) =>
+        departmentsOnHoliday.add(dept)
+      );
     });
 
     // Process each user
     for (const user of allUsers) {
       const { id: userId, name: userName, department } = user;
 
-      // Check if the user is on holiday
+      // Check if department is on holiday
       if (departmentsOnHoliday.has(department)) {
         onHolidayUsers.push({ name: userName, department });
         continue;
       }
 
-      // Check leave requests for the given date
+      // Check leave requests
       const leaveRequestsQuery = query(
         collection(db, "leaveRequests"),
         where("userId", "==", userId),
@@ -49,14 +63,16 @@ export const generateAttendanceReport = async (date) => {
         where("endDate", ">=", date)
       );
       const leaveRequestsSnapshot = await getDocs(leaveRequestsQuery);
-      const leaveRequestData = leaveRequestsSnapshot.docs.map((doc) => doc.data());
+      const leaveRequestData = leaveRequestsSnapshot.docs.map((doc) =>
+        doc.data()
+      );
 
       if (leaveRequestData.length > 0) {
-        const leaveStatus = leaveRequestData.some((request) => request.status === "Approved")
+        const leaveStatus = leaveRequestData.some((r) => r.status === "Approved")
           ? "Approved"
-          : leaveRequestData.some((request) => request.status === "Pending")
+          : leaveRequestData.some((r) => r.status === "Pending")
           ? "Pending"
-          : leaveRequestData.some((request) => request.status === "Declined")
+          : leaveRequestData.some((r) => r.status === "Declined")
           ? "Declined"
           : "Rejected";
 
@@ -65,7 +81,7 @@ export const generateAttendanceReport = async (date) => {
       }
 
       // Check session attendance for the given date
-      const sessionDocRef = doc(db, "employee", userId, "sessions", date);
+      const sessionDocRef = doc(db, "employeeDetails", userId, "sessions", date);
       const sessionDoc = await getDoc(sessionDocRef);
 
       if (sessionDoc.exists()) {
@@ -77,18 +93,11 @@ export const generateAttendanceReport = async (date) => {
       }
     }
 
-    // Sort present users: UJustBe first, then by login time
+    // Sort present users: "UJustBe" dept first, then by login time
     const sortedUsers = presentUsers.sort((a, b) => {
       if (a.department === "UJustBe" && b.department !== "UJustBe") return -1;
       if (a.department !== "UJustBe" && b.department === "UJustBe") return 1;
       return new Date(a.loginTime) - new Date(b.loginTime);
-    });
-
-    console.log(`Attendance Report for ${date}:`, {
-      presentUsers: sortedUsers,
-      leaveUsers,
-      notMarkedUsers,
-      onHolidayUsers,
     });
 
     return {

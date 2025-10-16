@@ -1,0 +1,108 @@
+/* UserNotifications.css */
+
+.notifications-dropdown {
+  position: absolute;
+  top: 35px; 
+  right: 0;
+  background-color: #f9f9f9;
+  
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Dropdown shadow */
+  /* width: 100%; */
+  width: 260px; /* Adjust width as needed */
+  z-index: 1000; /* Ensure dropdown is above other content */
+
+  overflow: hidden;
+  z-index: 10;
+  border-radius: 10px;
+  border: 1px solid #EEE; /* Dropdown border */
+}
+
+.notifications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notifications-list li {
+  padding: 15px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.notifications-list li.read {
+  background-color: white; /* Background for read notifications */
+}
+
+.notifications-list li.unread {
+  background-color: #fff; /* Background for unread notifications */
+}
+
+.notifications-list button {
+  background-color: #16274f;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 10px;
+    margin-left: 150px;
+}
+
+.notifications-list button:hover {
+  background-color: #0056b3; /* Button hover color */
+}
+
+.bell-container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: end;
+  /* padding-right: 25px; */
+  /* top: -73px; */
+}
+
+
+.notifications-list p{
+  font-family: 'Mukta', sans-serif;;
+  /* color: black; */
+  text-align: left;
+  font-size: 14px;
+  margin-block-start: 0em;
+  margin-block-end: 0em; 
+  color: #323232;
+  
+}
+.notification-count{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: red;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  right: -10px;
+  top: -10px;
+}
+
+.n-header{
+  color: black;
+  display: block;
+  padding-left: 20px;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 600;
+}
+
+.remove-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.remove-button:hover {
+  background-color: darkred;
+}

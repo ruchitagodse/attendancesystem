@@ -1,0 +1,147 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 600px; /* Adjusted for better form spacing */
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .modal h2{
+    color: #16274f;
+    font-family: 'Forum', sans-serif;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .leave-container {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .form-group input, 
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  .button-container{width:100%; display: flex; justify-content: space-between; column-gap: 20px;}
+  .m-button-3.submit-btn, .m-button-4.submit-btn{width: 45%;}
+  .date-group {
+    display: flex;
+    gap: 30px; /* Adjusted space between start and end date fields */
+  }
+  
+  .date-group .form-group {
+    flex: 1;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .buttons, .back-button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .buttons:hover {
+    background-color: #0056b3;
+  }
+  
+  .back-button {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .back-button:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Style for the dropdown */
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #fff;
+  appearance: none; /* Hides the default dropdown arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="#333" d="M2 0L0 2h4z"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position the arrow */
+  background-size: 10px; /* Adjust the size of the arrow */
+  cursor: pointer;
+}
+
+/* Hover and focus states */
+.form-group select:hover, .form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Dropdown arrow positioning */
+.form-group {
+  position: relative;
+}
+
+.form-group select:focus {
+  outline: none;
+}
+
+/* Adjusting the custom arrow's container */
+.form-group select::-ms-expand {
+  display: none; /* For IE */
+}
+
+
+sup {
+  font-size: 14px;
+color: red;
+}
