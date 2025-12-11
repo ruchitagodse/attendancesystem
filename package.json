@@ -19,7 +19,7 @@
     "firebase-admin": "^12.7.0",
     "firestore": "^1.1.6",
     "formidable": "^3.5.2",
-    "next": "^15.4.6",
+    "next": "15.4.8",
     "next-app": "^0.0.0",
     "qrcode": "^1.5.4",
     "react": "^18",
