@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { db } from "../../../firebaseConfig";
-import { doc, getDoc, collection, getDocs, query, orderBy, where } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  where,
+} from "firebase/firestore";
+
 import Header from "../../../component/Header";
 import Navbar from "../../../component/Navbar";
 import QRCode from "qrcode.react";
@@ -13,62 +22,78 @@ const ViewAsset = () => {
   const [asset, setAsset] = useState(null);
   const [logs, setLogs] = useState([]);
 
-  // Fetch asset info
   useEffect(() => {
-    if (assetId) {
-      fetchAsset();
-      fetchAssetLogs();
-    }
+    if (!assetId) return;
+
+    fetchAsset();
+    fetchAssetLogs();
   }, [assetId]);
 
+  // Fetch asset details
   const fetchAsset = async () => {
-    const assetRef = doc(db, "assets", assetId);
-    const snapshot = await getDoc(assetRef);
-    if (snapshot.exists()) {
-      setAsset(snapshot.data());
+    try {
+      const assetRef = doc(db, "assets", assetId);
+      const snapshot = await getDoc(assetRef);
+
+      if (snapshot.exists()) {
+        setAsset(snapshot.data());
+      } else {
+        setAsset(null);
+      }
+    } catch (err) {
+      console.error("Error fetching asset:", err);
     }
   };
 
+  // Fetch asset movement logs
   const fetchAssetLogs = async () => {
-    const logsQuery = query(
-      collection(db, "assetLogs"),
-      where("assetId", "==", assetId),
-      orderBy("timestamp", "desc")
-    );
-    const snapshot = await getDocs(logsQuery);
-    const logList = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-    setLogs(logList);
+    try {
+      const logsQuery = query(
+        collection(db, "assetLogs"),
+        where("assetId", "==", assetId),
+        orderBy("timestamp", "desc")
+      );
+
+      const snapshot = await getDocs(logsQuery);
+      setLogs(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    } catch (err) {
+      console.error("Error fetching logs:", err);
+    }
   };
 
-  if (!asset) return <p>Loading asset details...</p>;
+  if (!asset) {
+    return (
+      <>
+        <Header />
+        <Navbar />
+        <main className="maincontainer">
+          <p>Loading asset details...</p>
+        </main>
+      </>
+    );
+  }
 
   return (
     <>
       <Header />
       <Navbar />
+
       <main className="maincontainer">
         <div className="users-table-container">
           <h2>Asset Details: {assetId}</h2>
 
-          {/* Asset Info */}
+          {/* Asset Information */}
           <div className="asset-info">
-            <div>
-              <strong>Name:</strong> {asset.name}
-            </div>
-            <div>
-              <strong>Category:</strong> {asset.category}
-            </div>
-            <div>
-              <strong>Status:</strong> {asset.status}
-            </div>
-            <div>
+            <p><strong>Name:</strong> {asset.name}</p>
+            <p><strong>Category:</strong> {asset.category}</p>
+            <p><strong>Status:</strong> {asset.status}</p>
+            <p>
               <strong>Assigned To:</strong>{" "}
               {asset.assignedTo?.name || "Not assigned"}
-            </div>
-            <div>
-              <strong>Description:</strong> {asset.description || "-"}
-            </div>
-            <div>
+            </p>
+            <p><strong>Description:</strong> {asset.description || "-"}</p>
+
+            <div style={{ marginTop: "10px" }}>
               <strong>Image:</strong>
               {asset.imageURL ? (
                 <img
@@ -80,15 +105,19 @@ const ViewAsset = () => {
                 <span> No image</span>
               )}
             </div>
-            <div style={{ marginTop: "10px" }}>
+
+            <div style={{ marginTop: "15px" }}>
               <strong>QR Code:</strong>
-              <QRCode value={assetId} size={128} />
+              <div style={{ marginTop: "10px" }}>
+                <QRCode value={assetId} size={128} />
+              </div>
             </div>
           </div>
 
-          {/* Asset Logs */}
+          {/* Asset Logs Section */}
           <div style={{ marginTop: "30px" }}>
             <h3>Asset Journey Logs</h3>
+
             {logs.length === 0 ? (
               <p>No logs available for this asset.</p>
             ) : (
@@ -101,13 +130,14 @@ const ViewAsset = () => {
                     <th>Timestamp</th>
                   </tr>
                 </thead>
+
                 <tbody>
                   {logs.map((log) => (
                     <tr key={log.id}>
                       <td>{log.action}</td>
                       <td>{log.employee || "-"}</td>
                       <td>{log.performedBy}</td>
-                      <td>{log.timestamp.toDate().toLocaleString()}</td>
+                      <td>{log.timestamp?.toDate().toLocaleString()}</td>
                     </tr>
                   ))}
                 </tbody>
