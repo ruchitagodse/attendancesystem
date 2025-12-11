@@ -13,7 +13,7 @@ import {
 
 import Header from "../../../component/Header";
 import Navbar from "../../../component/Navbar";
-import QRCode from "qrcode.react";
+import { QRCodeCanvas } from "qrcode.react"; // ✅ FIXED IMPORT
 
 const ViewAsset = () => {
   const router = useRouter();
@@ -29,7 +29,6 @@ const ViewAsset = () => {
     fetchAssetLogs();
   }, [assetId]);
 
-  // Fetch asset details
   const fetchAsset = async () => {
     try {
       const assetRef = doc(db, "assets", assetId);
@@ -45,7 +44,6 @@ const ViewAsset = () => {
     }
   };
 
-  // Fetch asset movement logs
   const fetchAssetLogs = async () => {
     try {
       const logsQuery = query(
@@ -82,7 +80,6 @@ const ViewAsset = () => {
         <div className="users-table-container">
           <h2>Asset Details: {assetId}</h2>
 
-          {/* Asset Information */}
           <div className="asset-info">
             <p><strong>Name:</strong> {asset.name}</p>
             <p><strong>Category:</strong> {asset.category}</p>
@@ -109,12 +106,11 @@ const ViewAsset = () => {
             <div style={{ marginTop: "15px" }}>
               <strong>QR Code:</strong>
               <div style={{ marginTop: "10px" }}>
-                <QRCode value={assetId} size={128} />
+                <QRCodeCanvas value={assetId} size={128} /> {/* ✅ FIXED */}
               </div>
             </div>
           </div>
 
-          {/* Asset Logs Section */}
           <div style={{ marginTop: "30px" }}>
             <h3>Asset Journey Logs</h3>
 
