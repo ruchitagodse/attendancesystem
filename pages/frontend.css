@@ -348,7 +348,7 @@
     }
   }
  .birthday-page {
-  padding: 2rem;
+  padding: 1.5rem;
   font-family: 'Forum';
   background: #77cce81f;
   min-height: 100vh;
@@ -357,78 +357,84 @@
 .birthday-page h2 {
   text-align: center;
   color: #16274f;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 
+/* SECTION CARD */
 .birthday-section {
-  margin-bottom: 3rem;
-  padding: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.2rem;
   border-radius: 15px;
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .birthday-section h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
   color: #16274f;
   border-left: 4px solid #16274f;
   padding-left: 10px;
 }
 
+/* BIRTHDAY CARD */
 .birthday-card {
   position: relative;
   padding: 1rem;
-  padding-right: 100px; /* leave space for the image */
+  padding-right: 100px;
   border: 1px solid rgb(232, 238, 250);
-  border-radius: 10px;
+  border-radius: 12px;
   background: #c5e3ed1f;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
+/* IMAGE POSITION */
 .birthday-image.top-right {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 80px;
-  height: 80px;
+  top: 12px;
+  right: 12px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #004aad;
 }
 
-
 .birthday-card h3 {
-  flex: 1 1 100%;
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-  color: #333;
+  font-size: 1.1rem;
+  margin: 0.2rem 0;
+  color: #16274f;
 }
 
 .birthday-card p {
-  flex: 1 1 50%;
-  margin: 0.2rem 0;
-  font-size: 16px;
-  color: #302e2e;
+  margin: 0.1rem 0;
+  font-size: 15px;
+  color: #3a3939;
 }
-
 
 .birthday-info {
   display: flex;
   flex-direction: column;
 }
 
+/* SEND BUTTON */
 .send-message-btn {
-  padding: 8px 16px;
+  padding: 10px 16px;
   background-color: #fe6f06;
   color: #fff;
-  width: 120px;
+  width: 130px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
   margin-top: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 14px;
   transition: background-color 0.3s ease;
 }
 
@@ -436,17 +442,42 @@
   background-color: #b14f0a;
 }
 
+/* =====================
+      MOBILE FIXES
+===================== */
 @media (max-width: 600px) {
+  .birthday-page {
+    padding: 1rem;
+  }
+
+  .birthday-section {
+    padding: 1rem;
+  }
+
   .birthday-card {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 1rem;
+    padding-right: 1rem;
   }
 
-  .birthday-card p {
-    flex: 1 1 100%;
+  .birthday-image.top-right {
+    position: static;
+    margin: 0 auto 10px;
+    width: 90px;
+    height: 90px;
   }
 
-  .birthday-image {
-    margin: 0 auto 1rem auto;
+  .birthday-card h3 {
+    text-align: center;
+  }
+
+  .birthday-info {
+    text-align: left;
+  }
+
+  .send-message-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 30px;
   }
 }
