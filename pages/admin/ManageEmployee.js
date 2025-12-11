@@ -47,7 +47,7 @@ export default function ManageEmployees() {
 
   return (
     <div className="manage-employees">
-      <h1>Manage Employees</h1>
+      <h1>List of Users</h1>
       <input
         type="text"
         placeholder="Search by name..."
