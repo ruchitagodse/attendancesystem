@@ -4,30 +4,22 @@ import dynamic from "next/dynamic";
 import Header from "../../component/Header";
 import Navbar from "../../component/Navbar";
 
-// Dynamically import react-qr-scanner
-const QrScanner = dynamic(() => import("react-qr-scanner"), { ssr: false });
+// Dynamic import
+const QrReader = dynamic(() => import("react-qr-reader-es"), { ssr: false });
 
 const ScanAsset = () => {
   const [scanResult, setScanResult] = useState("");
   const router = useRouter();
 
-  const handleScan = (result) => {
-    if (result) {
-      const scannedValue = result?.text || result; // handle different formats
-      setScanResult(scannedValue);
-      router.push(`/asset/${scannedValue}`);
+  const handleScan = (data) => {
+    if (data) {
+      setScanResult(data);
+      router.push(`/asset/${data}`);
     }
   };
 
   const handleError = (err) => {
-    console.error("QR Scan Error:", err);
-  };
-
-  const previewStyle = {
-    height: 300,
-    width: "100%",
-    borderRadius: "10px",
-    overflow: "hidden",
+    console.error("QR Error:", err);
   };
 
   return (
@@ -38,11 +30,11 @@ const ScanAsset = () => {
         <div className="users-table-container">
           <h2>Scan Asset QR Code</h2>
 
-          <QrScanner
+          <QrReader
             delay={300}
             onError={handleError}
             onScan={handleScan}
-            style={previewStyle}
+            style={{ width: "100%" }}
           />
 
           {scanResult && (
