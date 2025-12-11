@@ -16,27 +16,33 @@ const AddBirthday = () => {
   const [dob, setDob] = useState('');
   const [image, setImage] = useState(null);
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const userRef = collection(db, 'employeeDetails');
-        const snapshot = await getDocs(userRef);
-        const data = snapshot.docs.map(doc => ({
+ useEffect(() => {
+  const fetchUsers = async () => {
+    try {
+      const userRef = collection(db, 'employeeDetails');
+      const snapshot = await getDocs(userRef);
+
+      const data = snapshot.docs.map(doc => {
+        const info = doc.data().personalInfo || {};
+
+        return {
           id: doc.id,
-          name: doc.data()[" Name"],
-          phone: doc.data()["Mobile no"],
-          email: doc.data()["Email"],
-     dob: convertToInputDateFormat(doc.data()["DOB"])
+          name: info.name || '',
+          phone: info.mobile || '',
+          email: info.email || '',
+          dob: info.dob || ''
+        };
+      });
 
-        }));
-        setUserList(data);
-      } catch (error) {
-        console.error('Error fetching users:', error);
-      }
-    };
+      setUserList(data);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  };
 
-    fetchUsers();
-  }, []);
+  fetchUsers();
+}, []);
+
 const convertToInputDateFormat = (dobStr) => {
   if (!dobStr) return '';
   const [day, month, year] = dobStr.split('/');
@@ -109,11 +115,11 @@ const convertToInputDateFormat = (dobStr) => {
     <Layout>
     <section className='c-form box'>
       <div>
-        <h2>Add New Prospects</h2>
+        <h2>Add New Employee</h2>
         <ul>
 
           <li className='form-row'>
-            <h4>Select MentOrbiter:<sup>*</sup></h4>
+            <h4>Select Employee:<sup>*</sup></h4>
             <div className='autosuggest'>
               <input
                 type="text"
@@ -134,17 +140,17 @@ const convertToInputDateFormat = (dobStr) => {
           </li>
 
           <li className='form-row'>
-            <h4>Selected MentOrbiter Name:<sup>*</sup></h4>
+            <h4>Selected Employee Name:<sup>*</sup></h4>
             <div className='multipleitem'><p>{name}</p></div>
           </li>
 
           <li className='form-row'>
-            <h4>Selected MentOrbiter's Phone:<sup>*</sup></h4>
+            <h4>Selected Employee's Phone:<sup>*</sup></h4>
             <div className='multipleitem'><p>{phone}</p></div>
           </li>
 
           <li className='form-row'>
-            <h4>Selected MentOrbiter Email:<sup>*</sup></h4>
+            <h4>Selected Employee Email:<sup>*</sup></h4>
             <div className='multipleitem'><p>{orbiteremail}</p></div>
           </li>
 
