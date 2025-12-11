@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { db } from "../../firebaseConfig";
+import { db } from "../../../firebaseConfig";
 import { doc, getDoc, collection, getDocs, query, orderBy, where } from "firebase/firestore";
-import Header from "../../component/Header";
-import Navbar from "../../component/Navbar";
+import Header from "../../../component/Header";
+import Navbar from "../../../component/Navbar";
 import QRCode from "qrcode.react";
 
 const ViewAsset = () => {
